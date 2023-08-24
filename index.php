@@ -8,16 +8,16 @@
         
         <form action="Biblioteca.php" method="post">
             <fieldset>
-                <legend>Nome do Livro</legend>
+                <legend>Nome do Livro </legend>
                     <input name="Nome livro" type="tetx"><hr>
                 <legend>Autor</legend>
                     <input name="Nome Autor "type="text"><hr>
-                <legend>Nome do Aluno</legend>
+                <legend>Nome do Aluno </legend>
                     <input name="Nome Aluno" type="text"><hr>
-                <legend>Data de Retirada</legend>
+                <legend>Data de Retirada </legend>
                     <input name="Data Retirada" type="date"
                     placeholder="00/00/00"><hr>
-                <legend>Data de Devolução</legend>    
+                <legend>Data de Devolução </legend>    
                     <input name="Data Devolucao" type="date"
                     placeholder="00/00/00"><br><br>
 

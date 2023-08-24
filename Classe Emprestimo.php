@@ -2,15 +2,15 @@
 
 class emprestimo {
     
-    public $aluno; 
-    public $livro; 
+    private $aluno; 
+    private $livro; 
     public $dataRetirada;
     public $dataDevolucao;
     
     public function __construct(livro $livro, aluno $aluno)
     {
-        $this->aluno = $aluno;
         $this->livro = $livro; 
+        $this->aluno = $aluno;
 
     }
 
@@ -38,7 +38,7 @@ class emprestimo {
         $this->dataDevolucao = $dataDevolucao-> format('d-m-y');
     }
 
-    public function imprimirDetalhe (){
+    public function imprimirDetalhe(){
         $this->dataEmprestimo();
 
         echo '<b>Detalhes do Empréstimo:<hr></b>';
@@ -53,6 +53,5 @@ class emprestimo {
         echo '<b>Data de Empréstimo</b>'. $this->dataRetirada.'<br>';
         echo '<b>Data Devolução</b>'. $this->dataDevolucao;
     }
-
 }
 ?>

@@ -8,7 +8,7 @@ class aluno  {
     private $email;
     private $livros = [];
 
-    public function __construct(aluno $nome, $cpf, $celular, $dataNascimento, $email)
+    public function __construct($nome, $cpf, $celular, $dataNascimento, $email)
     {
         $this->nome = $nome;
         $this->cpf = $cpf;
@@ -37,10 +37,9 @@ class aluno  {
         return $this->email;
     }
 
-    public function addLivros (aluno $livros){
-        return $this->livros = $livros;
+    public function addLivros (livro $livros){
+        return $this->livros[] = $livros;
     }
-
 }
 
 ?>
