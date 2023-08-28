@@ -7,7 +7,9 @@ class aluno  {
     private $dataNascimento;
     private $email;
     private $livros = [];
+    private $aluno = [];
 
+    
     public function __construct($nome, $cpf, $celular, $dataNascimento, $email)
     {
         $this->nome = $nome;
@@ -39,7 +41,25 @@ class aluno  {
 
     public function addLivros (livro $livros){
         return $this->livros[] = $livros;
+ 
+    }
+
+    public function addAluno(aluno $aluno){
+        return $this->aluno[] = $aluno;
+    }
+
+    public function ImprimirDetalhes(){
+        
+        echo '<b>Detalhes do Aluno:<hr></br>';
+        echo '<b>Aluno<br></b>';
+        echo '<b>Nome do Aluno:</b>'. $this->getNome().'<br>';
+        echo '<b>Email do aluno:'. $this->getEmail().'<hr>';
+        echo '<b>Cpf:'. $this->getCPF(). '<br>';
+        echo '<b>Celular:'. $this->getCelular().'<hr>';
+        echo '<b>Data Nascimento:'. $this->getDataNascimento();
+
     }
 }
-
+  
 ?>
+
