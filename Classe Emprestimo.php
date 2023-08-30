@@ -43,10 +43,10 @@ class emprestimo {
 
         echo '<b>Detalhes do Empréstimo<br></b>';
         echo '<br>';
-        echo '<b>Nome do Aluno:'. $this->aluno->getNome().'<br>';
-        echo '<b>Título do Livro:'. $this->livro->getTitulo().'<br>';
-        echo '<b>Data de Empréstimo'. $this->dataRetirada.'<br>';
-        echo '<b>Data Devolução'. $this->dataDevolucao;
+        echo '<b>Nome do Aluno:</b>'. $this->aluno->getNome().'<br>';
+        echo '<b>Título do Livro:</b>'. $this->livro->getTitulo().'<br>';
+        echo '<b>Data de Empréstimo</b>'. $this->dataRetirada.'<br>';
+        echo '<b>Data Devolução</b>'. $this->dataDevolucao;
     }
 }
 ?>
