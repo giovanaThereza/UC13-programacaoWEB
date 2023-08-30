@@ -9,19 +9,25 @@
         <form action="Biblioteca.php" method="post">
             <fieldset>
                 <label>Nome do Livro </label>
-                    <input name="Nome livro" type="tetx"><hr>
-                <label>Autor</label>
-                    <input name="Nome Autor "type="text"><hr>
+                    <input name="nomeLivro" type="tetx"><hr>
                 <label>Nome do Aluno </label>
-                    <input name="Nome Aluno" type="text"><hr>
+                    <input name="nomeAluno" type="text"><hr>
                 <label>Data de Retirada </label>
-                    <input name="Data Retirada" type="date"
+                    <input name="dataRetirada" type="date"
                     placeholder="00/00/00"><hr>
                 <label>Data de Devolução </label>    
-                    <input name="Data Devolucao" type="date"
+                    <input name="dataDevolucao" type="date"
                     placeholder="00/00/00"><br><br>
 
-                <button type="submit"> Emprestar </button>
+                <button type="submit" name="fazerEmprestimo">Confirmar </button>
+                <?php
+                    if(isset($_POST['fazerEmprestimo'])){
+                        $aluno = $_POST['nomeAluno'];
+                        $livro = $_POST['nomeLivro'];
+                        $dataRetirada = $_POST['dataRetirada'];
+                        $dataDevolucao = $_POST['dataDevolucao'];
+                    }
+                ?>
             </fieldset>
         </form>
         </body>
@@ -43,7 +49,7 @@
                 <label>Nome do Aluno</label>
                       <input name="nomeAluno" type="text"><hr>
                 <label>CPF</label>    
-                     <input name= "digiteCpF" typ="text"><hr>
+                     <input name= "digiteCPF" typ="text"><hr>
                 <label>Celular</label>
                    <input name="digiteCelular" type="text"
                         placeholder="(00)00000-0000"><hr>
@@ -53,11 +59,11 @@
                 <label>Email</label>
                     <input name="Email" type="text"><br><br>
                 
-                <button type="submit" name="confirmar">Registrar</button>    
+                <button type="submit" name="cadastroAluno">Confirmar</button>    
                 <?php 
-                    if(isset($_POST['confirmar'])){
+                    if(isset($_POST['cadastroAluno'])){
                         $nome = $_POST['nomeAluno']; 
-                        $cpf = $_POST['digiteCpF']; 
+                        $cpf = $_POST['digiteCPF']; 
                         $celular = $_POST['digiteCelular']; 
                         $dataNascimento = $_POST['dataNascimento'];
                         $email = $_POST['Email'];
@@ -82,24 +88,24 @@
         <body>
             <h1>Cadastro de Livro</h1>
 
-        <form action="biblioteca.php" method="post">
+        <form action="Biblioteca.php" method="post">
             <fieldset>
                 <label>Título</label>
-                    <input name="titulo" type="text"><hr>
+                    <input name="titulo" type="text"><br><hr>
                 <label>Autor</label>  
-                    <input name="autor" type="text"> 
+                    <input name="autor" type="text"><br><hr>
                 <label>Preço</label>
-                    <input name="preco" type="text">
+                    <input name="preco" type="text"><br><hr>
                 <label>Numeros de Páginas</label>
-                    <input name="numeroPaginas" type="text">
+                    <input name="numeroPaginas" type="text"><br><hr>
                 <label>Ano Publicação</label>
-                    <input name="anoPublic"type="text">
+                    <input name="anoPublic"type="text"><br><hr>
                 <label>ISBN</label>
-                    <input name="isbn" type="text">
+                    <input name="isbn" type="text"><br><hr>
                     
-                <button type="submit" name="Cadastro">Cadastrar</button>
+                <button type="submit" name="cadastroLivro">Confirmar</button>
                 <?php
-                    if(isset($_POST['Cadastro'])){
+                    if(isset($_POST['cadastroLivro'])){
                         $titulo = $_POST['titulo'];
                         $autor = $_POST['autor'];
                         $preco = $_POST['preco'];
@@ -112,4 +118,33 @@
             </fieldset>
         </form>                
         </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biblioteca</title>
+    </head>
+    <body>
+        <h1>Login Usuário</h1> 
+    <form action="Biblioteca.php" method="post">
+        <fieldset>
+            <label>Email</label>
+                <input name="email" type="text"><hr>
+            <label>Senha</label>
+                <input name="senha" type="text">
+
+                <button type="submit" name="login">Confirmar</button>
+            <?php
+                if(isset($_POST['login'])){
+                    $emailUsuario = $_POST['Email'];
+                    $senha = $_POST['senha'];
+                }
+            ?>
+        </fieldset>
+    </form>           
+    </body>
 </html>

@@ -41,11 +41,10 @@ class emprestimo {
     public function imprimirDetalhe(){
         $this->dataEmprestimo();
 
-        echo '<b>Detalhes do Empréstimo <br></b>';
+        echo '<b>Detalhes do Empréstimo<br></b>';
+        echo '<br>';
         echo '<b>Nome do Aluno:'. $this->aluno->getNome().'<br>';
-        echo '<b>Email do aluno:'. $this->aluno->getEmail().'<hr>';
         echo '<b>Título do Livro:'. $this->livro->getTitulo().'<br>';
-        echo '<b>Autor:'. $this->livro->getAutor().'<hr>';
         echo '<b>Data de Empréstimo'. $this->dataRetirada.'<br>';
         echo '<b>Data Devolução'. $this->dataDevolucao;
     }

@@ -49,15 +49,15 @@ class aluno  {
     }
 
     public function ImprimirDetalhes(){
-        
-        echo '<b>Detalhes do Aluno:<hr></br>';
-        echo '<b>Aluno<br></b>';
-        echo '<b>Nome do Aluno:</b>'. $this->getNome().'<br>';
-        echo '<b>Email do aluno:'. $this->getEmail().'<hr>';
-        echo '<b>Cpf:'. $this->getCPF(). '<br>';
-        echo '<b>Celular:'. $this->getCelular().'<hr>';
-        echo '<b>Data Nascimento:'. $this->getDataNascimento();
 
+        echo '<b>Detalhes Alunos</b>';
+        echo '<br>';
+        echo '<br>';
+        echo '<b>Nome do Aluno:</b>'. $this->getNome().'<br>';
+        echo '<b>Email do aluno:</b>'. $this->getEmail().'<br>';
+        echo '<b>Cpf:</b>'. $this->getCPF(). '<br>';
+        echo '<b>Celular:</b>'. $this->getCelular(). '<br>';
+        echo '<b>Data Nascimento:</b>'. $this->getDataNascimento();
     }
 }
   

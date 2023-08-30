@@ -4,25 +4,27 @@ require_once'Classe Aluno.php';
 require_once'Classe Livro.php';
 require_once'Classe Emprestimo.php';
 
-$aluno1 = new aluno("Giovana", 47918914813, 988129196, 2006-07-21, "giovanat@teste.com" );
+if(isset($_POST['fazerEmprestimo'])){
+    $nome = $_POST['nomeAluno'];
+    $titulo = $_POST['nomeLivro'];
+    $dataRetirada = $_POST['dataRetirada'];
+    $dataDevolucao = $_POST['dataDevolucao'];
 
-$livro1 = new livro("A Seleção", "Kiera Cass", "34.90", "363", "2012", "258");
+    $aluno = new aluno($nome, " ", " ", " ", " ");
+    $livro = new livro($titulo, " ", " ", " ", " ", " "); 
 
-$aluno1->addLivros($livro1);
-
-$emprestimo = new emprestimo($livro1, $aluno1);
-
-$emprestimo->imprimirDetalhe();
-
+    $emprestimo = new emprestimo($livro, $aluno);
+    $emprestimo->imprimirDetalhe();
+}
 ?>
 
 <?php 
 
 require_once'Classe Aluno.php';
 
-if(isset($_POST['confirmar'])){
+if(isset($_POST['cadastroAluno'])){
     $nome = $_POST['nomeAluno']; 
-    $cpf = $_POST['digiteCpF']; 
+    $cpf = $_POST['digiteCPF']; 
     $celular = $_POST['digiteCelular']; 
     $dataNascimento = $_POST['dataNascimento'];
     $email = $_POST['Email'];
@@ -38,7 +40,7 @@ if(isset($_POST['confirmar'])){
 
 require_once'Classe Livro.php';
 
-if(isset($_POST['Cadastro'])){
+if(isset($_POST['cadastroLivro'])){
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $preco = $_POST['preco'];
@@ -52,3 +54,24 @@ if(isset($_POST['Cadastro'])){
     echo "<hr>";
 }
 ?>
+
+<?php
+
+require_once'Classe Usuario.php';
+
+if(isset($_POST['login'])){
+    $emailUsuario = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $usuario = new usuario($emailUsuario, $senha);
+    $usuario->mostrarInformacao();
+    echo "<hr>";
+}
+?>
+<html>
+    <body>
+        <form action = "index.php" method = "get">
+        <button type="submit">Voltar</button>
+        </form>
+    </body>
+</html>
